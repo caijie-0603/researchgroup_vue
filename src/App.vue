@@ -1,14 +1,10 @@
 <template>
-
   <div id="app">
     <TopPublic v-show="!(path==='/login')"></TopPublic>
 
     <router-view/>
     <Footer v-show="!(path==='/login')"/>
   </div>
-
-
-
 </template>
 
 <script>
