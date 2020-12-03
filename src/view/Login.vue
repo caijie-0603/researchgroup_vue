@@ -55,7 +55,7 @@
                         { required: true, message: '请输入登录用户名', trigger: 'blur' },
                         {
                             required: true,
-                            pattern: /^1[3|4|5|7|8][0-9]{9}$/,
+                            pattern: /^1[3456789]\d{9}$/,
                             message: "请输入正确的登录用户名",
                             trigger: "blur"
                         }
@@ -85,9 +85,18 @@
 </script>
 
 <style lang="less" scoped>
-  .login_container {
-    background-color: #2b4b6b;
+
+  html, body {
     height: 100%;
+
+  }
+
+  .login_container {
+    margin:auto;
+    padding: 0;
+    background-color: #2b4b6b;
+    width:1519px;
+    height:720px;
   }
   .login_box {
     width: 450px;
@@ -126,6 +135,9 @@
     box-sizing: border-box;
   }
   .btns {
+    width:160px;
+    height:40px;
+    padding: 0 80px 0 80px;
     display: flex;
     justify-content: flex-end;
   }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TopPublic v-show="!(path==='/login')"></TopPublic>
+    <TopPublic v-show="!(path==='/login')"/>
 
     <router-view/>
     <Footer v-show="!(path==='/login')"/>
@@ -45,7 +45,8 @@
     margin:0 auto;
   }
   #app{
-    width: 1519px;
+    margin: 0 auto;
+    width:1519px;
   }
 
 
