@@ -1,23 +1,56 @@
 <template>
+
   <div id="app">
-    <img src="./assets/logo.png">
+    <TopPublic v-show="!(path==='/login')"></TopPublic>
+
     <router-view/>
+    <Footer v-show="!(path==='/login')"/>
   </div>
+
+
+
 </template>
 
 <script>
-export default {
-  name: 'App'
+
+  import TopPublic from './components/TopPublic'
+  import Footer from './components/Footer'
+  export default {
+    name: 'App',
+    data() {
+      return {
+        path:''
+      }
+    },
+    methods: {
+
+    },
+    mounted(){
+      //判断路由
+      this.path = this.$route.path
+    },
+    watch:{
+      $route(to,from){
+        this.path=to.path;
+      }
+    },
+    components:{
+      TopPublic,
+      Footer
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
+
+  * {
+    margin:0 auto;
+  }
+  #app{
+    width: 1519px;
+  }
+
+
 </style>
